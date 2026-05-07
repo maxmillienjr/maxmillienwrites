@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
+import { initAnalytics } from './lib/analytics'
 import '@fontsource-variable/inter/index.css'
 import '@fontsource-variable/jetbrains-mono/index.css'
 import '@fontsource-variable/fraunces/index.css'
@@ -14,6 +15,8 @@ declare module '@tanstack/react-router' {
     router: typeof router
   }
 }
+
+initAnalytics()
 
 const rootEl = document.getElementById('root')
 if (!rootEl) throw new Error('Root element #root not found')
