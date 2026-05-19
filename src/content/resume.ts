@@ -37,7 +37,7 @@ export const resume: Resume = {
   location: 'Greater Boston Area',
   phone: '(617) 224-7372',
   email: 'max.millien@puretome.com',
-  github: 'github.com/maxathy',
+  github: 'github.com/maxmillienjr',
   pdfHref: '/resume/Millien-Max-2026.pdf',
   summary:
     'Elite full-stack architect and product owner with 10+ years of experience turning complex ideas into scalable, production-ready systems. Specialized in advanced RAG architectures, agentic workflows, and high-performance frontend engineering. Deep expertise across backend infrastructure and UX/UI design, building systems that are technically robust and intuitively usable. Innovating at the intersection of engineering depth and product strategy: designing for scale, driving engagement, and shipping with speed.',

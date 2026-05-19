@@ -23,7 +23,7 @@ export const ossShowcase: OssShowcase[] = [
       'Vertex AI',
       'GitHub Actions',
     ],
-    githubUrl: 'https://github.com/maxathy/agent-native-monorepo',
+    githubUrl: 'https://github.com/maxmillienjr/agent-native-monorepo',
     detailHref: '/work/oss/agent-native-monorepo',
     extractedFrom:
       "Extracted from PureTome's production monorepo. IP scrubbed per the Sanitization Rule: the skeleton, conventions, and orchestration patterns are real; the domain logic is generic.",
@@ -34,7 +34,7 @@ export const ossShowcase: OssShowcase[] = [
     blurb:
       'A drop-in field-level encryption layer for Postgres + Drizzle ORM, designed for PHI/PII workloads under HIPAA or SOC 2. Transparent AES-256-GCM at the column level using Google Tink for key management, with envelope encryption against GCP KMS. Includes a deterministic-search variant for encrypted-column lookups without hauling the entire table into memory. The README includes the threat model, the audit-trail expectations, and what this doesn\u2019t protect against.',
     stack: ['TypeScript', 'NestJS', 'Drizzle', 'Postgres', 'Google Tink', 'GCP KMS'],
-    githubUrl: 'https://github.com/maxathy/secure-data-vault',
+    githubUrl: 'https://github.com/maxmillienjr/secure-data-vault',
     detailHref: '/work/oss/secure-data-vault',
     extractedFrom: "Extracted from Quiet Horizons' encryption-at-rest layer.",
   },
@@ -51,7 +51,7 @@ export const ossShowcase: OssShowcase[] = [
       'Vertex AI Gemini',
       'Cloud Run',
     ],
-    githubUrl: 'https://github.com/maxathy/realtime-voice-infra',
+    githubUrl: 'https://github.com/maxmillienjr/realtime-voice-infra',
     detailHref: '/work/oss/realtime-voice-infra',
     extractedFrom: "Extracted from Quiet Horizons' ambient scribe pipeline.",
   },

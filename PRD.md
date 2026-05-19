@@ -65,7 +65,7 @@ This replaces the current memoir-forward snippet, immediately neutralizing the G
 ```
 
 **Nav (desktop, left-to-right):** Work · Stack · Engage · Resume · [Book a Call CTA]
-**Footer:** three columns — Navigation / PureTome ecosystem links (puretome.com, blog.puretome.com, github.com/maxathy) / small "Also an author →" link to `/author`.
+**Footer:** three columns — Navigation / PureTome ecosystem links (puretome.com, blog.puretome.com, github.com/maxmillienjr) / small "Also an author →" link to `/author`.
 
 ---
 
@@ -148,7 +148,7 @@ Two columns.
 Three columns + a thin bottom bar.
 
 - **Col 1 — Site:** Work · Stack · Engage · Résumé · Contact
-- **Col 2 — Ecosystem:** PureTome (product, puretome.com) · Writing (blog.puretome.com) · GitHub (github.com/maxathy) · LinkedIn
+- **Col 2 — Ecosystem:** PureTome (product, puretome.com) · Writing (blog.puretome.com) · GitHub (github.com/maxmillienjr) · LinkedIn
 - **Col 3 — Get in touch:** `max.millien@puretome.com` · Calendly · Greater Boston
 
 **Social icons (below footer columns, muted, small):** three icons only — GitHub, LinkedIn, Medium. No Twitter/X, no Instagram, no TikTok. Three signals "professional"; eight signals "personal brand." The memoir-era Carrd footer's full social wall is intentionally not carried over.

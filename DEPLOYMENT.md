@@ -166,7 +166,7 @@ Do not flip DNS until every box is checked (mirrors PRD-003 §6):
 - [ ] Hero graph renders (or fallback is acceptable)
 - [ ] `/stack` renders real content, no placeholder
 - [ ] `/contact` form submits; you received the bounce email
-- [ ] All three OSS GitHub repos exist publicly under `github.com/maxathy` (no 404s)
+- [ ] All three OSS GitHub repos exist publicly under `github.com/maxmillienjr` (no 404s)
 - [ ] OSS deep-dive pages render real content
 - [ ] `/author` renders with real cover image and final book summary
 - [ ] `/resume` spacing polished + PDF downloads with correct mime type
