@@ -16,8 +16,11 @@ export function initAnalytics(): void {
   document.head.appendChild(script)
 
   window.dataLayer = window.dataLayer || []
-  window.gtag = function gtag(...args) {
-    window.dataLayer.push(args)
+  window.gtag = function gtag() {
+    // gtag.js expects the IArguments object, not a real Array — pushing a spread-args
+    // array silently breaks beacon dispatch.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments)
   }
 
   window.gtag('js', new Date())
