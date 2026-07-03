@@ -249,10 +249,29 @@ const PRINT_STYLES = `
   .resume-download { display: none !important; }
   body { color: #111 !important; }
   .pt-16 { padding-top: 0 !important; }
-  .resume-page { padding: 14mm 16mm !important; font-size: 11pt; color: #111; }
+  .min-h-screen { min-height: 0 !important; }
+  .resume-page {
+    --space-2: 3pt;
+    --space-4: 4pt;
+    --space-6: 6pt;
+    --space-8: 7pt;
+    --space-10: 9pt;
+    --space-16: 0pt;
+    padding: 10mm 14mm 6mm !important;
+    font-size: 10pt;
+    line-height: 1.35;
+    color: #111;
+  }
+  .resume-page section:last-child { margin-bottom: 0 !important; }
+  .resume-page dl > div { grid-template-columns: 16em 1fr !important; gap: 2pt 10pt !important; }
   .resume-page * { color: #111 !important; border-color: #ccc !important; }
-  .resume-page h1 { font-size: 24pt; }
-  .resume-page h2 { color: #333 !important; }
+  .resume-page h1 { font-size: 20pt !important; }
+  .resume-page h2 { color: #333 !important; font-size: 11pt !important; margin-top: 8pt !important; margin-bottom: 4pt !important; }
+  .resume-page h3, .resume-page .text-lg { font-size: 10.5pt !important; }
+  .resume-page .mb-3 { margin-bottom: 2pt !important; }
+  .resume-page ul, .resume-page dl { gap: 2pt !important; }
+  .resume-page li { break-inside: avoid; }
+  .resume-page h2, .resume-page h3 { break-after: avoid; }
   .resume-page a { color: #111 !important; text-decoration: none; }
   .resume-page .before\\:bg-\\[color\\:var\\(--color-accent\\)\\]::before { background: #111 !important; }
 }
