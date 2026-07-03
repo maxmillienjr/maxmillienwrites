@@ -25,7 +25,8 @@ export type OpenSourceProject = {
 }
 
 export type OpenSource = {
-  contributions: string
+  contributionsPrefix: string
+  contributionRepos: string[]
   projects: OpenSourceProject[]
 }
 
@@ -127,7 +128,8 @@ export const resume: Resume = {
     },
   ],
   openSource: {
-    contributions: 'Merged fixes to Angular (core) and claude-mem',
+    contributionsPrefix: 'merged fixes to',
+    contributionRepos: ['Angular (core)', 'claude-mem'],
     projects: [
       { name: 'secure-data-vault', href: 'https://github.com/maxmillienjr/secure-data-vault' },
       { name: 'agent-native-monorepo', href: 'https://github.com/maxmillienjr/agent-native-monorepo' },

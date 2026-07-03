@@ -103,25 +103,27 @@ function ResumePage() {
           </Section>
 
           <Section title="Open Source">
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               <p className="text-[color:var(--color-fg)]/80">
-                <span className="font-mono text-sm uppercase tracking-wider text-[color:var(--color-fg)]/60">
-                  Contributions ·{' '}
-                </span>
-                {resume.openSource.contributions}
+                <span className="font-semibold text-[color:var(--color-fg)]">Contributions:</span>{' '}
+                {resume.openSource.contributionsPrefix}{' '}
+                {resume.openSource.contributionRepos.map((r, i) => (
+                  <span key={r}>
+                    {i > 0 && ' and '}
+                    <span className="font-semibold text-[color:var(--color-fg)]">{r}</span>
+                  </span>
+                ))}
               </p>
               <p className="text-[color:var(--color-fg)]/80">
-                <span className="font-mono text-sm uppercase tracking-wider text-[color:var(--color-fg)]/60">
-                  Projects ·{' '}
-                </span>
+                <span className="font-semibold text-[color:var(--color-fg)]">Projects:</span>{' '}
                 {resume.openSource.projects.map((p, i) => (
                   <span key={p.name}>
-                    {i > 0 && <span className="text-[color:var(--color-fg)]/50"> · </span>}
+                    {i > 0 && <span className="mx-2 text-[color:var(--color-fg)]/50">•</span>}
                     <a
                       href={p.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline-offset-4 hover:underline"
+                      className="font-medium underline-offset-4 hover:underline"
                     >
                       {p.name}
                     </a>
