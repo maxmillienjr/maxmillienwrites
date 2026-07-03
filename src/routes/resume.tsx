@@ -242,10 +242,14 @@ function buildJsonResume(r: typeof resume) {
 
 const PRINT_STYLES = `
 @media print {
+  @page { margin: 0; }
+  html, body { background: #fff !important; }
+  * { background: transparent !important; box-shadow: none !important; text-shadow: none !important; }
   header.fixed, footer { display: none !important; }
   .resume-download { display: none !important; }
-  body { background: #fff !important; color: #111 !important; }
-  .resume-page { padding: 0 !important; font-size: 11pt; color: #111; }
+  body { color: #111 !important; }
+  .pt-16 { padding-top: 0 !important; }
+  .resume-page { padding: 14mm 16mm !important; font-size: 11pt; color: #111; }
   .resume-page * { color: #111 !important; border-color: #ccc !important; }
   .resume-page h1 { font-size: 24pt; }
   .resume-page h2 { color: #333 !important; }
