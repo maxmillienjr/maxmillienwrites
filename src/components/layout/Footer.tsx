@@ -17,7 +17,9 @@ export function Footer() {
               <li><Link to="/work" className="hover:text-[color:var(--color-fg)]">Work</Link></li>
               <li><Link to="/stack" className="hover:text-[color:var(--color-fg)]">Stack</Link></li>
               <li><Link to="/engage" className="hover:text-[color:var(--color-fg)]">Engage</Link></li>
-              <li><Link to="/resume" className="hover:text-[color:var(--color-fg)]">Résumé</Link></li>
+              {!labs && (
+                <li><Link to="/resume" className="hover:text-[color:var(--color-fg)]">Résumé</Link></li>
+              )}
               <li><Link to="/contact" className="hover:text-[color:var(--color-fg)]">Contact</Link></li>
             </ul>
           </div>

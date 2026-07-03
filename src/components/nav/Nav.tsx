@@ -15,6 +15,7 @@ const LINKS = [
 export function Nav() {
   const [open, setOpen] = useState(false)
   const labs = isLabs()
+  const links = LINKS.filter((l) => !(labs && l.to === '/resume'))
 
   useEffect(() => {
     if (!open) return
@@ -54,7 +55,7 @@ export function Nav() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-          {LINKS.map((l) => (
+          {links.map((l) => (
             <NavLink key={l.to} to={l.to}>
               {l.label}
             </NavLink>
@@ -80,7 +81,7 @@ export function Nav() {
       {open && (
         <div className="border-t border-white/5 bg-[color:var(--color-bg)] md:hidden">
           <Container className="flex flex-col gap-4 py-6">
-            {LINKS.map((l) => (
+            {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}

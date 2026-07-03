@@ -1,15 +1,18 @@
 import { useEffect } from 'react'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, redirect } from '@tanstack/react-router'
 import { Container } from '../components/ui/Container'
 import { SEO } from '../components/seo/SEO'
+import { isLabs } from '../lib/tenant'
 import {
   PREVIOUS_ROLES_LABEL,
-  PREVIOUS_ROLES_RANGE,
   resume,
   type Role,
 } from '../content/resume'
 
 export const Route = createFileRoute('/resume')({
+  beforeLoad: () => {
+    if (isLabs()) throw redirect({ to: '/work' })
+  },
   component: ResumePage,
 })
 
@@ -99,6 +102,35 @@ function ResumePage() {
             </dl>
           </Section>
 
+          <Section title="Open Source">
+            <div className="flex flex-col gap-3">
+              <p className="text-[color:var(--color-fg)]/80">
+                <span className="font-mono text-sm uppercase tracking-wider text-[color:var(--color-fg)]/60">
+                  Contributions ·{' '}
+                </span>
+                {resume.openSource.contributions}
+              </p>
+              <p className="text-[color:var(--color-fg)]/80">
+                <span className="font-mono text-sm uppercase tracking-wider text-[color:var(--color-fg)]/60">
+                  Projects ·{' '}
+                </span>
+                {resume.openSource.projects.map((p, i) => (
+                  <span key={p.name}>
+                    {i > 0 && <span className="text-[color:var(--color-fg)]/50"> · </span>}
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline-offset-4 hover:underline"
+                    >
+                      {p.name}
+                    </a>
+                  </span>
+                ))}
+              </p>
+            </div>
+          </Section>
+
           <Section title="Experience">
             <div className="flex flex-col gap-[var(--space-8)]">
               {currentRoles.map((role) => (
@@ -110,9 +142,6 @@ function ResumePage() {
                   <h3 className="font-mono text-sm uppercase tracking-wider text-[color:var(--color-fg)]/70">
                     {PREVIOUS_ROLES_LABEL}
                   </h3>
-                  <span className="font-mono text-xs text-[color:var(--color-fg)]/50">
-                    {PREVIOUS_ROLES_RANGE}
-                  </span>
                 </div>
                 <div className="flex flex-col gap-[var(--space-8)]">
                   {previousRoles.map((role) => (
@@ -133,9 +162,11 @@ function ResumePage() {
                   <p className="text-lg">{ed.institution}</p>
                   <p className="text-[color:var(--color-fg)]/70">{ed.degree}</p>
                 </div>
-                <p className="font-mono text-sm text-[color:var(--color-fg)]/60">
-                  {ed.start} – {ed.end}
-                </p>
+                {(ed.start || ed.end) && (
+                  <p className="font-mono text-sm text-[color:var(--color-fg)]/60">
+                    {ed.start} – {ed.end}
+                  </p>
+                )}
               </div>
             ))}
           </Section>

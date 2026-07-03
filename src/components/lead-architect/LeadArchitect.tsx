@@ -38,10 +38,10 @@ export function LeadArchitect() {
                 Book a sprint assessment →
               </Link>
               <Link
-                to="/resume"
+                to="/work"
                 className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-white/15 px-5 py-3 text-sm font-medium text-[color:var(--color-fg)] hover:border-[color:var(--color-accent)]"
               >
-                Read the résumé ↗
+                See production work ↗
               </Link>
             </div>
           </div>
