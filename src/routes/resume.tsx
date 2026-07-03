@@ -56,7 +56,7 @@ function ResumePage() {
               <h1 className="text-[3rem] leading-none md:text-[3.75rem]">
                 {resume.name}
               </h1>
-              <p className="mt-3 font-mono text-sm text-[color:var(--color-fg)]/70">
+              <p className="mt-3 font-mono text-xs text-[color:var(--color-fg)]/70">
                 {resume.location} · {resume.phone} ·{' '}
                 <a href={`mailto:${resume.email}`} className="underline-offset-4 hover:underline">
                   {resume.email}
@@ -266,6 +266,7 @@ const PRINT_STYLES = `
   .resume-page dl > div { grid-template-columns: 16em 1fr !important; gap: 2pt 10pt !important; }
   .resume-page * { color: #111 !important; border-color: #ccc !important; }
   .resume-page h1 { font-size: 20pt !important; }
+  .resume-header p { font-size: 8.5pt !important; white-space: nowrap; }
   .resume-page h2 { color: #333 !important; font-size: 11pt !important; margin-top: 8pt !important; margin-bottom: 4pt !important; }
   .resume-page h3, .resume-page .text-lg { font-size: 10.5pt !important; }
   .resume-page .mb-3 { margin-bottom: 2pt !important; }

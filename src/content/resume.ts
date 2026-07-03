@@ -220,4 +220,4 @@ export const resume: Resume = {
   ],
 }
 
-export const PREVIOUS_ROLES_LABEL = 'Notable Previous Engineering Leadership & Full-Stack Roles'
+export const PREVIOUS_ROLES_LABEL = 'Earlier Experience'
