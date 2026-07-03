@@ -1,4 +1,4 @@
-import { getTenantMeta } from './tenant'
+import { getTenantMeta, CANONICAL_ORIGIN } from './tenant'
 
 export interface MetaInput {
   title: string
@@ -16,7 +16,10 @@ export interface MetaOutput {
 
 export function buildMeta({ title, description, path }: MetaInput): MetaOutput {
   const tenant = getTenantMeta()
-  const canonical = new URL(path, tenant.origin).toString()
+  // Canonical always resolves to the consolidated origin, regardless of which
+  // domain served the page. The OG image stays on the tenant's own origin so
+  // each domain serves its own social card.
+  const canonical = new URL(path, CANONICAL_ORIGIN).toString()
   const ogImage = new URL(tenant.ogImage, tenant.origin).toString()
   return {
     title,

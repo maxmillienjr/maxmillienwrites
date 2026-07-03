@@ -11,8 +11,17 @@ export interface TenantMeta {
 
 const LABS_HOSTNAME = 'labs.puretome.com'
 
+// The single origin every indexable canonical URL points to. labs.puretome.com
+// and maxmillienwrites.com serve identical content, so we consolidate all
+// canonical/og:url signals onto the personal-brand domain. This makes Google
+// merge ranking signals into one "Max Millien" result instead of treating the
+// two domains as competing duplicates (which triggers "Duplicate, Google chose
+// different canonical than user" in Search Console). labs.puretome.com keeps its
+// own branding/OG image via `origin` below — only the canonical consolidates.
+export const CANONICAL_ORIGIN = 'https://maxmillienwrites.com'
+
 const PERSONAL_LINKEDIN_URL = 'https://www.linkedin.com/in/maxmill/'
-const LABS_LINKEDIN_URL = 'https://www.linkedin.com/company/puretome-labs/'
+export const LABS_LINKEDIN_URL = 'https://www.linkedin.com/company/puretome-labs/'
 const PERSONAL_LINKEDIN_LABEL = 'linkedin.com/in/maxmill'
 const LABS_LINKEDIN_LABEL = 'linkedin.com/company/puretome-labs'
 
