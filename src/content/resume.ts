@@ -74,7 +74,6 @@ export const resume: Resume = {
         'Gemini API',
         'Vertex AI',
         'Ollama',
-        'Weaviate',
       ],
     },
     {
@@ -170,7 +169,7 @@ export const resume: Resume = {
       current: true,
       bullets: [
         'Shipped a HIPAA-compliant telehealth and patient dossier management platform for a psychiatric practice client (Quiet Horizon PLLC), utilizing GCP, Google Workspace BAA (ADC), and strict AES-256-GCM encryption for all PHI at rest via NestJS and Drizzle ORM.',
-        'Engineered an ambient AI medical scribe utilizing Vertex AI (Gemini 3). Designed a stateless inference pipeline that transforms raw WebSocket audio dictations into structured psychiatric notes dynamically in-memory, ensuring zero draft-state database writes to preserve strictly immutable medical audit trails.',
+        'Engineered an ambient AI medical scribe utilizing Vertex AI (Gemini 2.5). Designed a stateless inference pipeline that transforms raw WebSocket audio dictations into structured psychiatric notes dynamically in-memory, ensuring zero draft-state database writes to preserve strictly immutable medical audit trails.',
         'Developed a highly reactive clinical workspace using Angular 21 and Spartan UI, featuring a real-time secure dictation pipeline that streams live browser audio over WebSockets to Google Speech-to-Text, reducing provider charting time by synthesizing complex psychiatric evaluations in seconds.',
         'Spearheaded the product development and UX design to launch an AI Biographer platform, empowering users to craft, publish, and distribute ebook/paperback memoirs and biographies.',
         'Built and deployed an LLM-agnostic stateless engine leveraging LangGraph, Neo4j, and PGVector, significantly improving large narrative coherence (500k words) over standard RAG implementations.',
@@ -178,7 +177,7 @@ export const resume: Resume = {
         'Built an internal growth engine (Next.js, shadcn/ui) to monitor telemetry and orchestrate AI credit economies.',
         'Designed and shipped a "Hybrid Memory System" combining vector similarity search with graph-based causality mapping to execute multi-step AI workflows without hallucination.',
         'Orchestrated background job queues and asynchronous service communication using Google Cloud Pub/Sub, QStash, and Redis for reliable, heavy-workload AI processing.',
-        'Implemented rigorous DevOps and testing standards, building a zero-downtime CI/CD pipeline via GitHub Actions, GCP, and Terraform, backed by comprehensive Playwright E2E and 85% Jest unit test coverage.',
+        'Implemented rigorous DevOps and testing standards, building a zero-downtime CI/CD pipeline via GitHub Actions, GCP, and Terraform, backed by comprehensive Playwright E2E and 80% Jest unit test coverage.',
       ],
     },
     {
