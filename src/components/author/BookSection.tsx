@@ -3,9 +3,9 @@ import type { AuthorBook } from '../../content/author'
 
 export function BookSection({ book }: { book: AuthorBook }) {
   return (
-    <section id="book" className="py-[var(--space-16)] scroll-mt-24">
+    <section id="book" className="border-t border-[color:var(--color-rule)] py-[var(--space-12)] scroll-mt-24">
       <Container>
-        <p className="mb-[var(--space-4)] font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
+        <p className="author-eyebrow mb-[var(--space-4)]">
           The Book
         </p>
         <div className="grid gap-[var(--space-8)] md:grid-cols-[minmax(240px,340px)_1fr] md:items-start">
@@ -16,13 +16,13 @@ export function BookSection({ book }: { book: AuthorBook }) {
               width={340}
               height={510}
               loading="lazy"
-              className="w-full rounded-[var(--radius-md)] shadow-2xl"
+              className="author-cover w-full max-w-[300px] rounded-[var(--radius-md)] md:max-w-none"
             />
           </div>
           <div>
             <h2 className="mb-[var(--space-2)]">{book.title}</h2>
             {book.subtitle ? (
-              <p className="mb-[var(--space-4)] text-[color:var(--color-muted)] italic">
+              <p className="author-subtitle mb-[var(--space-4)]">
                 {book.subtitle}
               </p>
             ) : null}
@@ -40,7 +40,7 @@ export function BookSection({ book }: { book: AuthorBook }) {
               >
                 Buy on Amazon →
               </a>
-              <span className="font-mono text-xs uppercase tracking-wider text-[color:var(--color-muted)]">
+              <span className="author-eyebrow">
                 Published {book.publishedYear}
               </span>
             </div>

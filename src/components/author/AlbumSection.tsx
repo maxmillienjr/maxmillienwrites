@@ -25,18 +25,18 @@ export function AlbumSection({ album }: { album: AuthorAlbum }) {
   return (
     <section
       id="album"
-      className="border-t border-[color:var(--color-muted)]/20 py-[var(--space-16)] scroll-mt-24"
+      className="border-t border-[color:var(--color-rule)] py-[var(--space-12)] scroll-mt-24"
     >
       <Container>
-        <p className="mb-[var(--space-4)] font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
-          The Soundtrack
+        <p className="author-eyebrow mb-[var(--space-4)]">
+          The Album
         </p>
         <h2 className="mb-[var(--space-4)]">{album.title}</h2>
         <p className="mb-[var(--space-8)] text-lg">{album.intro}</p>
 
         <div
           ref={ref}
-          className="overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--color-muted)]/20"
+          className="overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--color-rule)] bg-black"
           style={{ minHeight: 352 }}
         >
           {visible ? (
@@ -61,11 +61,21 @@ export function AlbumSection({ album }: { album: AuthorAlbum }) {
           )}
         </div>
 
-        <div className="mt-[var(--space-6)] flex flex-wrap gap-[var(--space-6)] font-mono text-sm">
-          <a href={album.appleUrl} target="_blank" rel="noreferrer">
+        <div className="mt-[var(--space-6)] flex flex-wrap gap-[var(--space-2)]">
+          <a
+            href={album.appleUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="author-cta author-cta-secondary"
+          >
             Listen on Apple Music →
           </a>
-          <a href={album.youtubeUrl} target="_blank" rel="noreferrer">
+          <a
+            href={album.youtubeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="author-cta author-cta-secondary"
+          >
             Watch on YouTube →
           </a>
         </div>
