@@ -108,11 +108,9 @@ button:focus-visible,
 }
 
 .author-surface {
-  --color-bg: #001219;
-  --color-fg: #f8fafc;
   --color-accent: #e9c46a;
-  --color-muted: #8a9bb0;
-  --color-rule: rgb(248 250 252 / 0.08);
+  --color-muted: #9a9aa3;
+  --color-rule: rgb(245 244 240 / 0.08);
 
   background-color: var(--color-bg);
   color: var(--color-fg);
