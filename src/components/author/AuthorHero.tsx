@@ -3,20 +3,15 @@ import type { AuthorHero as AuthorHeroContent } from '../../content/author'
 
 export function AuthorHero({ hero }: { hero: AuthorHeroContent }) {
   return (
-    <section className="pt-[var(--space-16)] pb-[var(--space-12)]">
+    <section className="author-hero pt-[var(--space-16)] pb-[var(--space-8)]">
       <Container>
-        <div className="grid gap-[var(--space-8)] md:grid-cols-[1.4fr_1fr] md:items-start">
+        <div className="grid gap-[var(--space-6)] lg:grid-cols-[1fr_1.15fr] lg:gap-[var(--space-12)]">
           <div>
-            <p className="mb-[var(--space-3)] font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
-              Author · Engineer
-            </p>
-            <h1 className="mb-[var(--space-6)]">{hero.h1}</h1>
-            <div className="space-y-[var(--space-3)] text-lg md:text-xl">
-              {hero.bio.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-            </div>
-            <div className="mt-[var(--space-6)] flex flex-wrap gap-[var(--space-2)]">
+            <p className="author-eyebrow mb-[var(--space-3)]">Author · Engineer</p>
+            <h1>{hero.h1}</h1>
+            <p className="author-subtitle mt-[var(--space-2)]">{hero.subtitle}</p>
+            <p className="pull-quote my-[var(--space-6)]">{hero.tagline}</p>
+            <div className="flex flex-wrap gap-[var(--space-2)]">
               <a
                 href={hero.primaryCta.href}
                 target="_blank"
@@ -35,9 +30,11 @@ export function AuthorHero({ hero }: { hero: AuthorHeroContent }) {
               </a>
             </div>
           </div>
-          <aside className="md:pt-[var(--space-6)]">
-            <p className="pull-quote">{hero.tagline}</p>
-          </aside>
+          <div className="space-y-[var(--space-3)] text-lg md:text-xl lg:pt-[var(--space-8)]">
+            {hero.bio.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

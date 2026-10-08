@@ -1,5 +1,6 @@
 export type AuthorHero = {
   h1: string
+  subtitle: string
   tagline: string
   bio: string[]
   primaryCta: { label: string; href: string }
@@ -37,7 +38,8 @@ export const authorContent: {
   press: AuthorPress
 } = {
   hero: {
-    h1: 'Max Millien | Author of Traffic Engineer',
+    h1: 'Max Millien',
+    subtitle: 'Author of Traffic Engineer',
     tagline: 'The Memoir Was the Prototype. PureTome Is the Engine.',
     bio: [
       'I am an engineer by trade and a writer by survival. I had to reverse-engineer my own mind. I had to debug the crash.',
@@ -71,7 +73,7 @@ export const authorContent: {
     title: 'The Soundtrack',
     intro:
       "More than just a soundtrack, this is the memoir's emotional DNA translated into sound. Every track breathes life into the story's deepest moments, transforming memory into melody and poetry.",
-    spotifyEmbedUrl: 'https://open.spotify.com/embed/artist/1gN3NenIJ6gq8H0wyVcD25',
+    spotifyEmbedUrl: 'https://open.spotify.com/embed/artist/1gN3NenIJ6gq8H0wyVcD25?theme=0',
     appleUrl: 'https://music.apple.com/us/artist/max-millien/1838776085',
     youtubeUrl: 'https://www.youtube.com/playlist?list=PLCaMAw7ZIrm8Zo3zROYty_6Zug0uT-DXO',
   },

@@ -6,10 +6,10 @@ export function PressSection({ press }: { press: AuthorPress }) {
   return (
     <section
       id="press"
-      className="border-t border-[color:var(--color-muted)]/20 py-[var(--space-16)] scroll-mt-24"
+      className="border-t border-[color:var(--color-rule)] py-[var(--space-12)] scroll-mt-24"
     >
       <Container>
-        <p className="mb-[var(--space-4)] font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
+        <p className="author-eyebrow mb-[var(--space-4)]">
           Press & Connect
         </p>
         <h2 className="mb-[var(--space-4)]">Get in touch</h2>
@@ -20,17 +20,17 @@ export function PressSection({ press }: { press: AuthorPress }) {
           </a>
         </p>
 
-        <ul className="grid gap-x-[var(--space-6)] gap-y-[var(--space-2)] font-mono text-sm sm:grid-cols-2 md:grid-cols-4">
+        <ul className="flex flex-wrap gap-[var(--space-1)]">
           {press.socials.map((s) => (
             <li key={s.href}>
-              <a href={s.href} target="_blank" rel="noreferrer">
-                {s.label} →
+              <a href={s.href} target="_blank" rel="noreferrer" className="author-chip">
+                {s.label}
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="mt-[var(--space-12)] text-sm text-[color:var(--color-muted)]">
+        <div className="mt-[var(--space-8)] text-sm">
           <Link to="/" className="font-mono">
             ← Back to professional home
           </Link>
