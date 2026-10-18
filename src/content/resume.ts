@@ -60,7 +60,7 @@ export const resume: Resume = {
   github: 'github.com/maxmillienjr',
   pdfHref: '/resume/Millien-Max-2026.pdf',
   summary:
-    'Full-stack architect and product owner with experience in turning complex ideas into scalable, production-ready systems. Specialized in RAG architectures, agentic workflows, and high-performance frontend engineering. Expertise across backend infrastructure and UX/UI design, building systems that are technically robust and intuitively usable. Innovating at the intersection of engineering and product strategy: designing for scale, driving engagement, and shipping with speed.',
+    'Full-stack and platform engineer who builds and operates production AI systems end-to-end. Recent work includes a hybrid retrieval engine over a knowledge graph and vector store, agent orchestration on LangGraph, and a HIPAA telehealth platform running under a BAA. Enterprise delivery background across healthcare, security systems, and telecom cloud infrastructure, with Kubernetes, Terraform, and CI/CD ownership at each. Owns systems from architecture through production support, and works directly with the people who depend on them.',
   skills: [
     {
       label: 'AI & Data Intelligence',
@@ -74,7 +74,6 @@ export const resume: Resume = {
         'Gemini API',
         'Vertex AI',
         'Ollama',
-        'Weaviate',
       ],
     },
     {
@@ -82,6 +81,8 @@ export const resume: Resume = {
       items: [
         'Node.js (NestJS, Express)',
         'C# (.NET Core, ASP.NET)',
+        'Python (Django, Celery)',
+        'Bash',
         'Java (Spring Boot)',
         'Ruby on Rails',
         'PostgreSQL',
@@ -145,40 +146,40 @@ export const resume: Resume = {
         blurb: 'voice-agent transport layer: AudioWorklet capture, backpressure-aware streaming',
       },
       {
-        name: 'agent-native-monorepo',
-        href: 'https://github.com/maxmillienjr/agent-native-monorepo',
-        blurb: 'stateful LangGraph agent chassis with a three-tier memory architecture',
-      },
-      {
         name: 'secure-data-vault',
         href: 'https://github.com/maxmillienjr/secure-data-vault',
         blurb: 'regulated-data reference architecture: envelope encryption, tamper-evident audit trails',
       },
       {
-        name: 'royalty-lookout',
-        href: 'https://github.com/maxmillienjr/royalty-lookout',
-        blurb: 'normalizes KDP, IngramSpark, and StreetLib royalty exports into one ledger',
+        name: 'agent-native-monorepo',
+        href: 'https://github.com/maxmillienjr/agent-native-monorepo',
+        blurb: 'stateful LangGraph agent chassis with a three-tier memory architecture',
       },
     ],
   },
   experience: [
     {
       company: 'PureTome',
-      title: 'Principal Engineer & Product Owner',
+      title: 'Principal Engineer (Founder)',
       start: '2025',
       end: 'Present',
       current: true,
       bullets: [
         'Shipped a HIPAA-compliant telehealth and patient dossier management platform for a psychiatric practice client (Quiet Horizon PLLC), utilizing GCP, Google Workspace BAA (ADC), and strict AES-256-GCM encryption for all PHI at rest via NestJS and Drizzle ORM.',
-        'Engineered an ambient AI medical scribe utilizing Vertex AI (Gemini 3). Designed a stateless inference pipeline that transforms raw WebSocket audio dictations into structured psychiatric notes dynamically in-memory, ensuring zero draft-state database writes to preserve strictly immutable medical audit trails.',
+        "Scoped and delivered an ambient AI medical scribe at the practice owner's request, then engineered the inference layer that made raw dictation clinically usable: a stateless Vertex AI (Gemini 2.5) pipeline that structures live WebSocket dictation into psychiatric notes in memory, with zero draft-state writes so the medical audit trail stays immutable.",
         'Developed a highly reactive clinical workspace using Angular 21 and Spartan UI, featuring a real-time secure dictation pipeline that streams live browser audio over WebSockets to Google Speech-to-Text, reducing provider charting time by synthesizing complex psychiatric evaluations in seconds.',
+        "Delivered contract engineering for a health-tech platform client as a founding senior full-stack developer, building booking and payments features across a Django/Celery backend hosted on Azure and a Next.js/TypeScript/GraphQL frontend, shipped through the client's PR review, Jest/Playwright suites, and CI gates.",
         'Spearheaded the product development and UX design to launch an AI Biographer platform, empowering users to craft, publish, and distribute ebook/paperback memoirs and biographies.',
-        'Built and deployed an LLM-agnostic stateless engine leveraging LangGraph, Neo4j, and PGVector, significantly improving large narrative coherence (500k words) over standard RAG implementations.',
+        'Built and deployed an LLM-agnostic stateless AI engine on LangGraph, with each of its 31 model call sites routable to Gemini or Claude by config; a 146-case eval (cross-vendor judge panel, same-model noise floor, $57) selected 19 features for a smaller model at about the same cost.',
         'Engineered a high-performance monorepo integrating a React 19 frontend with Node.js/NestJS microservices.',
         'Built an internal growth engine (Next.js, shadcn/ui) to monitor telemetry and orchestrate AI credit economies.',
         'Designed and shipped a "Hybrid Memory System" combining vector similarity search with graph-based causality mapping to execute multi-step AI workflows without hallucination.',
-        'Orchestrated background job queues and asynchronous service communication using Google Cloud Pub/Sub, QStash, and Redis for reliable, heavy-workload AI processing.',
-        'Implemented rigorous DevOps and testing standards, building a zero-downtime CI/CD pipeline via GitHub Actions, GCP, and Terraform, backed by comprehensive Playwright E2E and 85% Jest unit test coverage.',
+        'Designed and ran an LLM context-strategy evaluation (61 questions, 3 synthetic manuscripts, LLM judge, $8 total) showing whole-book prompt caching beat top-5 RAG, 99% vs 82% accuracy with unsupported claims cut from 19% to 7%, then shipped it with billing that prices cached tokens correctly.',
+        'Retired two datastores (Neo4j, pgvector/Supabase) from a live product with zero data loss, consolidating onto MongoDB with a dry-run-first, idempotent migration.',
+        'Orchestrated background job queues and asynchronous service communication using Redis, Google Cloud Pub/Sub, and QStash for reliable, heavy-workload AI processing.',
+        'Implemented rigorous DevOps and testing standards, building a zero-downtime CI/CD pipeline via GitHub Actions, GCP, and Terraform, backed by comprehensive Playwright E2E and 80% Jest unit test coverage.',
+        'Built and deployed an audiobook production pipeline that features content-addressed synthesis caching, Chirp 3 HD stock narration, Pub/Sub render jobs, ffmpeg loudness normalization and M4B chapter packaging, speech-to-text QC with automatic retakes, and consented voice cloning (Gemini 3.8 TTS).',
+        'Standardized an agentic development practice across three repos: implementation is specified in a written brief, delegated to Claude Code sub-agents, then reviewed diff by diff before it leaves the branch, supported by 18 domain skills, 4 custom sub-agent definitions, and SessionStart hook automation. Code produced this way ships through outside PR review and CI.',
       ],
     },
     {
@@ -187,8 +188,9 @@ export const resume: Resume = {
       start: '2016',
       end: '2018',
       bullets: [
+        "Partnered with an IBM solutions engineer to design and ship a custom integration between the platform and IBM DOORS, coordinating across two companies' engineering teams to get it running in the customer's environment.",
         'Led a team of 11 developers (across 3 time zones), directed agile processes, and architected microservice infrastructure across GKE and on-prem Kubernetes clusters, integrating GitLab CI/Nexus pipelines.',
-        'Designed and developed a modular Angular UI toolkit leveraging Material Design/Tachyons/D3.js, standardizing UX and cutting design-to-development time. The service layer consisted of 10+ microservices built with Spring Boot, Nest.js, and Koa.js, along with Postgres for persistence.',
+        'Designed and developed a modular Angular/TypeScript UI toolkit leveraging Material Design/Tachyons/D3.js, standardizing UX and cutting design-to-development time. The service layer consisted of 10+ microservices built with Spring Boot, Nest.js, and Koa.js, along with Postgres for persistence.',
         'Wrote an automation framework using Node/MongoDB that used Testcafe and Maven Surefire to provide nightly results on e2e testing of microservices. Service logging was performed using the ELK stack with Filebeat.',
         'Configured registries for Docker, npm, Helm, and Maven, streamlining DX and cutting build times.',
         'Implemented an out-of-stack identity provider/management service for authentication (OAuth2, JWT).',
@@ -206,7 +208,7 @@ export const resume: Resume = {
       ],
     },
     {
-      company: 'Verizon',
+      company: 'Verizon Enterprise Solutions',
       title: 'Senior Software Engineer',
       start: '2014',
       end: '2015',
@@ -218,13 +220,14 @@ export const resume: Resume = {
       ],
     },
     {
-      company: 'G4S',
+      company: 'G4S Technology Software Solutions',
       title: 'Senior Software Engineer',
       start: '2012',
       end: '2014',
       bullets: [
         'Developed a configurable survey and incident reporting tool (Knockout.js, RavenDB, ASP.NET MVC) deployed across 17K+ security systems, improving data collection efficiency and UX consistency.',
-        'Built SQL-to-RavenDB migration utilities and Excel importers supporting 100K+ system records.',
+        'Built SQL-to-RavenDB migration utilities and Excel importers supporting 100K+ system records, enabling seamless legacy-to-modern data transition.',
+        "Worked directly with Bank of America stakeholders to define and deliver a self-service capability in the Card Access Control platform, letting their facilities teams manage their own buildings' access points internally instead of routing every change back through G4S.",
         'Enhanced Card Access Control app with 10+ new features and performance optimizations, reducing load times and improving system uptime.',
         'Developed recruitment workflow module (Angular, C#, RabbitMQ, Azure), implementing CQRS architecture, improving request processing speed, and reducing code complexity.',
       ],
@@ -236,6 +239,7 @@ export const resume: Resume = {
       end: '2012',
       bullets: [
         'Developed applications for the Acute Care Documentation team to provide real-time electronic medical record solutions, thereby replacing paper flow sheets, assessments, and clinical notes.',
+        'Worked directly with floor nurses and product owners to turn real bedside charting workflow into the application, taking requirements and feedback straight from the clinical end users rather than through a written spec.',
         'Implemented a cost analysis tool for the Imaging Finance department that is used for tracking the usage of radiology resources owned by Massachusetts General Hospital.',
       ],
     },
