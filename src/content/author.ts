@@ -21,7 +21,8 @@ export type AuthorBook = {
 export type AuthorAlbum = {
   title: string
   intro: string
-  spotifyEmbedUrl: string
+  youtubePlaylistId: string
+  spotifyUrl: string
   appleUrl: string
   youtubeUrl: string
 }
@@ -73,7 +74,8 @@ export const authorContent: {
     title: 'The Soundtrack',
     intro:
       "More than just a soundtrack, this is the memoir's emotional DNA translated into sound. Every track breathes life into the story's deepest moments, transforming memory into melody and poetry.",
-    spotifyEmbedUrl: 'https://open.spotify.com/embed/artist/1gN3NenIJ6gq8H0wyVcD25?theme=0',
+    youtubePlaylistId: 'PLCaMAw7ZIrm8Zo3zROYty_6Zug0uT-DXO',
+    spotifyUrl: 'https://open.spotify.com/artist/1gN3NenIJ6gq8H0wyVcD25',
     appleUrl: 'https://music.apple.com/us/artist/max-millien/1838776085',
     youtubeUrl: 'https://www.youtube.com/playlist?list=PLCaMAw7ZIrm8Zo3zROYty_6Zug0uT-DXO',
   },
