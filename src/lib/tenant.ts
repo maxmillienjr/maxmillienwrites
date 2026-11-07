@@ -48,7 +48,7 @@ const PERSONAL_META: TenantMeta = {
   siteName: 'Max Millien',
   defaultTitle: 'Max Millien | Principal AI Architect | PureTome Labs',
   defaultDescription:
-    'Boston-based full-stack architect specializing in hybrid RAG, agentic workflows, and HIPAA-compliant AI systems. Available for C2C engagements.',
+    'Boston-based full-stack architect specializing in context engineering, agentic workflows, and HIPAA-compliant AI systems. Available for C2C engagements.',
   ogImage: '/headshot.jpeg',
 }
 
@@ -56,9 +56,9 @@ const LABS_META: TenantMeta = {
   tenant: 'labs',
   origin: 'https://labs.puretome.com',
   siteName: 'PureTome Labs',
-  defaultTitle: 'PureTome Labs — AI Architecture, Hybrid RAG, Agentic Systems',
+  defaultTitle: 'PureTome Labs | AI Architecture, Context Engineering, Agentic Systems',
   defaultDescription:
-    'Production AI infrastructure: hybrid RAG, agentic systems, and HIPAA-compliant builds. PureTome Labs is the consultancy arm led by Max Millien.',
+    'Production AI infrastructure: context engineering, agentic systems, and HIPAA-compliant builds. PureTome Labs is the consultancy arm led by Max Millien.',
   ogImage: '/ptl-social.png',
 }
 

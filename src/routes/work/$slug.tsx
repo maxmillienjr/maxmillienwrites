@@ -7,7 +7,7 @@ import { clientCaseStudyContent } from '../../content/case-studies'
 export const Route = createFileRoute('/work/$slug')({
   loader: ({ params }) => {
     const study = clientCaseStudies.find((s) => s.slug === params.slug)
-    if (!study) throw notFound()
+    if (!study?.detailHref) throw notFound()
     const content = clientCaseStudyContent[params.slug] ?? null
     return { study, content }
   },
@@ -32,7 +32,7 @@ function ClientCaseStudyPage() {
       <SEO
         title={`${study.title} | Max Millien`}
         description={study.blurb}
-        path={study.detailHref}
+        path={study.detailHref ?? '/work'}
       />
       <main className="pt-24 pb-[var(--space-16)]">
         <Container>

@@ -91,6 +91,12 @@ function OssDetailPage() {
                 </div>
               </section>
 
+              {content.additionalSections?.map((section) => (
+                <DeepDiveSection key={section.heading} label={section.heading}>
+                  {section.body}
+                </DeepDiveSection>
+              ))}
+
               <DeepDiveSection label="Threat model · constraints">
                 {content.threatModel}
               </DeepDiveSection><br />
