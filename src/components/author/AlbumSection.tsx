@@ -37,24 +37,25 @@ export function AlbumSection({ album }: { album: AuthorAlbum }) {
         <div
           ref={ref}
           className="overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--color-rule)] bg-black"
-          style={{ minHeight: 352 }}
+          style={{ aspectRatio: '16 / 9' }}
         >
           {visible ? (
             <iframe
-              src={album.spotifyEmbedUrl}
+              src={`https://www.youtube-nocookie.com/embed/videoseries?list=${album.youtubePlaylistId}`}
               width="100%"
-              height="352"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              height="100%"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
               loading="lazy"
-              title="Max Millien on Spotify"
-              className="block w-full"
-              style={{ border: 0, minHeight: 352 }}
+              title={`${album.title} on YouTube`}
+              className="block h-full w-full"
+              style={{ border: 0 }}
             />
           ) : (
             <div
               aria-hidden
-              className="flex items-center justify-center font-mono text-xs uppercase tracking-wider text-[color:var(--color-muted)]"
-              style={{ minHeight: 352 }}
+              className="flex h-full items-center justify-center font-mono text-xs uppercase tracking-wider text-[color:var(--color-muted)]"
             >
               Player loading…
             </div>
@@ -62,6 +63,14 @@ export function AlbumSection({ album }: { album: AuthorAlbum }) {
         </div>
 
         <div className="mt-[var(--space-6)] flex flex-wrap gap-[var(--space-2)]">
+          <a
+            href={album.spotifyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="author-cta author-cta-secondary"
+          >
+            Listen on Spotify →
+          </a>
           <a
             href={album.appleUrl}
             target="_blank"
