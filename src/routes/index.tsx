@@ -47,7 +47,7 @@ const SITE_SCHEMA = {
       url: 'https://labs.puretome.com',
       logo: 'https://labs.puretome.com/ptl-logo-small.png',
       description:
-        'Consultancy for production AI infrastructure: hybrid RAG, agentic systems, and HIPAA-compliant builds. Led by Max Millien.',
+        'Consultancy for production AI infrastructure: context engineering, agentic systems, and HIPAA-compliant builds. Led by Max Millien.',
       founder: { '@id': PERSON_ID },
       sameAs: [LABS_LINKEDIN_URL],
     },

@@ -26,8 +26,8 @@ export function LeadArchitect() {
               Max Millien · Principal AI Architect
             </p>
             <p className="mt-[var(--space-2)] text-lg text-[color:var(--color-fg)]/80">
-              Max leads PureTome Labs. Over a decade of full-stack experience and platform engineering refined into a single mission: building high-performance, robust AI infrastructure that remembers what others forget.
-              Max specializes in hybrid RAG and agentic workflows, engineering the "Armory" that empowers authors to own their legacy. Systems built on honesty, accountability, and technical depth.
+              Max leads PureTome Labs. Full-stack and platform engineering refined into a single mission: building high-performance, robust AI infrastructure that remembers what others forget.
+              Max specializes in context engineering and agentic workflows, engineering the "Armory" that empowers authors to own their legacy. Systems built on honesty, accountability, and technical depth.
             </p>
             <div className="mt-[var(--space-4)] flex flex-wrap items-center gap-4">
               <Link

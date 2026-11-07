@@ -47,15 +47,15 @@ export function HeroCopy() {
         </div>
 
         <h1 className="text-balance">
-          Hybrid RAG. Agentic systems.
+          Context engineering. Agentic systems.
           <br />
           <span className="text-[color:var(--color-fg)]/70">Ship-grade.</span>
         </h1>
 
         <p className="mt-6 max-w-[52ch] text-lg text-[color:var(--color-fg)]/75">
           I build production AI infrastructure for companies that can't afford
-          to ship a prototype. Ten years full-stack, a decade of platform
-          engineering, and a current stack purpose-built for the agentic era.
+          to ship a prototype. Full-stack and platform engineering, measured
+          against evals, on a current stack purpose-built for the agentic era.
         </p>
 
         <div className="mt-[var(--space-4)] flex flex-wrap items-center gap-4">

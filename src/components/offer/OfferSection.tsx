@@ -8,7 +8,7 @@ const TILES = [
   },
   {
     eyebrow: 'The Work',
-    body: 'I architect the backbone: hybrid RAG with Neo4j + pgvector, stateful agent graphs in LangGraph, and the observability to prove the system is actually thinking.',
+    body: 'I architect the backbone: context strategy chosen by an eval rather than by habit, stateful agent graphs in LangGraph, and the observability to prove the system is actually thinking.',
   },
   {
     eyebrow: 'The Outcome',
