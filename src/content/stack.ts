@@ -27,22 +27,22 @@ export const stackGroupMeta: Record<
 export const stackNodes: StackNode[] = [
   // AI & Data
   {
-    id: 'hybrid-rag',
-    name: 'Hybrid RAG',
+    id: 'context-eng',
+    name: 'Context engineering',
     group: 'ai',
-    note: 'Graph + vector retrieval fused at inference time. Neo4j supplies causal structure, pgvector supplies semantic recall, and a reranker resolves disagreements before the model ever sees the context.',
+    note: 'Measure the context strategy before building it. For PureTome, a 61-question eval put whole-book prompt caching at 99% against 82% for top-5 retrieval, so chat reads the whole manuscript, placed first in the prompt so the implicit cache serves about 80% of input tokens. Books over 150k words get a BM25 chapter selection.',
   },
   {
     id: 'neo4j',
     name: 'Neo4j',
     group: 'ai',
-    note: 'Narrative causality graphs for memoir structure: nodes are story beats, edges are causal relationships, queried at inference time to keep AI suggestions internally consistent.',
+    note: "Ran PureTome's author journal and the graph half of its retrieval until whole-book context made it redundant, then came out of production with no data lost. Still the concept graph in agent-native-monorepo, kept out of retrieval after an ablation (ADR 0009).",
   },
   {
     id: 'pgvector',
     name: 'pgvector',
     group: 'ai',
-    note: 'Semantic recall layer for manuscript chunks. IVFFlat index at 1536 dimensions, queried alongside Neo4j for hybrid retrieval that beats either in isolation.',
+    note: "The vector half of PureTome's retrieval until it was retired alongside Neo4j. Now the retrieval store in agent-native-monorepo: session-scoped vector search that refuses a query naming no session.",
   },
   {
     id: 'langgraph',
@@ -101,10 +101,16 @@ export const stackNodes: StackNode[] = [
     note: 'Source of truth for everything transactional. JSONB for flexible fields, pgvector for embeddings, row-level security for tenant isolation.',
   },
   {
+    id: 'mongodb',
+    name: 'MongoDB',
+    group: 'backend',
+    note: "PureTome's one database since Neo4j and pgvector were retired: manuscripts, chat transcripts and journey summaries through Mongoose, with each chat turn written before it is confirmed.",
+  },
+  {
     id: 'redis',
     name: 'Redis',
     group: 'backend',
-    note: 'ioredis-backed cache and distributed lock layer in front of the retrieval path: memoized embeddings and answers, plus leases that keep two workers from rebuilding the same index.',
+    note: "Caching in front of streaming text-to-speech and pronunciation lookups, plus a distributed lock, in PureTome's AI service.",
   },
   {
     id: 'qstash',
@@ -206,7 +212,7 @@ export const stackNodes: StackNode[] = [
     id: 'google-dlp',
     name: 'Google DLP',
     group: 'compliance',
-    note: 'PII/PHI scanning on every inbound document: inferred types surfaced to the user for confirmation, and an audit trail of what was detected where.',
+    note: "Built a DLP de-identification path in PureTome's AI service. It ships switched off; the live privacy features are pseudonyms in every export and the audiobook.",
   },
   {
     id: 'tink',
@@ -223,8 +229,10 @@ export const stackNodes: StackNode[] = [
 ]
 
 export const stackEdges: StackEdge[] = [
-  { source: 'neo4j', target: 'pgvector', label: 'hybrid retrieval' },
-  { source: 'pgvector', target: 'langgraph', label: 'semantic recall' },
+  { source: 'context-eng', target: 'gemini', label: 'implicit cache' },
+  { source: 'pgvector', target: 'langgraph', label: 'vector retrieval' },
+  { source: 'neo4j', target: 'langgraph', label: 'concept writes' },
+  { source: 'mongodb', target: 'node', label: 'Mongoose' },
   { source: 'langgraph', target: 'vertex-ai', label: 'agent orchestration' },
   { source: 'langgraph', target: 'gemini', label: 'structured extraction' },
   { source: 'nestjs', target: 'drizzle', label: 'typed data layer' },
@@ -241,7 +249,7 @@ export const stackEdges: StackEdge[] = [
   { source: 'drizzle', target: 'aes-256-gcm', label: 'column encryption' },
   { source: 'aes-256-gcm', target: 'tink', label: 'key management' },
   { source: 'tink', target: 'gcp', label: 'KMS envelope' },
-  { source: 'hipaa-baa', target: 'google-dlp', label: 'PHI redaction' },
+  { source: 'hipaa-baa', target: 'google-dlp', label: 'de-identification path' },
   { source: 'oauth2-jwt', target: 'nestjs', label: 'auth guards' },
   { source: 'mcp', target: 'claude-code', label: 'tool protocol' },
 ]

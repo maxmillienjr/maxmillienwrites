@@ -4,16 +4,14 @@ type Props = { study: ClientCaseStudy; index: number }
 
 export function CaseStudyCard({ study, index }: Props) {
   const accent = study.accent ?? 'var(--color-accent)'
-  return (
-    <a
-      href={study.detailHref}
-      className="rail-card group relative flex shrink-0 snap-start flex-col overflow-hidden rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] transition-colors hover:border-white/25"
-      style={{
-        width: 'clamp(280px, 40vw, 480px)',
-        scrollSnapAlign: 'start',
-      }}
-      aria-label={study.title}
-    >
+  const linked = Boolean(study.detailHref)
+  const className = `rail-card group relative flex shrink-0 snap-start flex-col overflow-hidden rounded-[var(--radius-lg)] border border-white/10 bg-white/[0.02] transition-colors${linked ? ' hover:border-white/25' : ''}`
+  const style = {
+    width: 'clamp(280px, 40vw, 480px)',
+    scrollSnapAlign: 'start' as const,
+  }
+  const body = (
+    <>
       <div
         aria-hidden
         className="relative h-[240px] overflow-hidden"
@@ -50,6 +48,16 @@ export function CaseStudyCard({ study, index }: Props) {
           ))}
         </ul>
       </div>
+    </>
+  )
+
+  return linked ? (
+    <a href={study.detailHref} className={className} style={style} aria-label={study.title}>
+      {body}
     </a>
+  ) : (
+    <article className={className} style={style} aria-label={study.title}>
+      {body}
+    </article>
   )
 }

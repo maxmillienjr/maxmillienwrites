@@ -3,7 +3,8 @@ export type ClientCaseStudy = {
   title: string
   blurb: string
   stack: string[]
-  detailHref: string
+  /** Omit for an engagement with no public write-up: the card renders without a link. */
+  detailHref?: string
   accent?: string
 }
 
@@ -21,9 +22,17 @@ export const clientCaseStudies: ClientCaseStudy[] = [
     slug: 'puretome',
     title: 'PureTome AI Biographer',
     blurb:
-      'Consumer platform that helps authors write memoirs with an adaptive AI partner. Three-brain memory architecture (RAG + episodic + author profile) achieved a 40% narrative-coherence lift over baseline RAG.',
-    stack: ['React 19', 'NestJS', 'LangGraph', 'Neo4j', 'pgvector'],
+      "An AI biographer that interviews an author, reads the whole manuscript on every turn, and narrates the finished book in a studio voice or the author's own. A 61-question eval moved chat from top-5 retrieval to whole-book context (82% to 99% accuracy), and two datastores came out of production with no data lost.",
+    stack: ['React 19', 'Express', 'NestJS', 'LangGraph', 'MongoDB', 'Gemini + Claude', 'Pub/Sub', 'Cloud Run'],
     detailHref: '/work/puretome',
     accent: '#D4FF4F',
+  },
+  {
+    slug: 'really-global',
+    title: 'Really Global',
+    blurb:
+      "Contract engineering for a health-tech platform, as a founding senior full-stack developer: booking and payments features across a Django/Celery backend and a Next.js/TypeScript/GraphQL frontend, shipped through the client's PR review, Jest/Playwright suites and CI gates.",
+    stack: ['Django', 'Celery', 'Next.js', 'TypeScript', 'GraphQL', 'Azure', 'Jest', 'Playwright'],
+    accent: '#9FB4FF',
   },
 ]

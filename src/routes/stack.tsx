@@ -15,7 +15,7 @@ function StackPage() {
     <>
       <SEO
         title="Stack | Max Millien"
-        description="The production stack behind PureTome and Quiet Horizons: hybrid RAG, NestJS, Angular, GCP, and the HIPAA-grade security layer that ties them together. Every primitive with an operator-level note."
+        description="The production stack behind PureTome and Quiet Horizons: whole-book context on LangGraph, NestJS, Angular, GCP, and the HIPAA-grade security layer that ties them together. Every primitive with an operator-level note."
         path="/stack"
       />
       <main className="pt-24 pb-[var(--space-16)]">
