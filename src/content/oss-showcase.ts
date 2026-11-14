@@ -34,6 +34,17 @@ export const ossShowcase: OssShowcase[] = [
       "Began as a sanitized extraction of PureTome's agent patterns and has grown its own domain since. docs/STATUS.md marks every capability implemented, stubbed, planned or removed against evidence at HEAD; 31 of 37 rows are implemented.",
   },
   {
+    slug: 'headless-lanes',
+    title: 'headless-lanes',
+    blurb:
+      'Scaffolding for running Claude Code agents unattended on systemd timers. A runner gives each login one run at a time, bills the subscription instead of an API key, and logs every run. Everything the agents make lands in one inbox, anything that needs a human waits in a decision queue, and a dispatcher lane works only what was approved. Ships a nightly lint, a single-file local console with a 30-second demo, and the failure behind each guardrail.',
+    stack: ['Bash', 'Python 3.11 (stdlib only)', 'SQLite', 'systemd', 'Claude Code'],
+    githubUrl: 'https://github.com/maxmillienjr/headless-lanes',
+    detailHref: '/work/oss/headless-lanes',
+    extractedFrom:
+      'Cut down from the system I run my own business on. The example prompts are generic templates and the demo data is invented.',
+  },
+  {
     slug: 'secure-data-vault',
     title: 'secure-data-vault',
     blurb:
