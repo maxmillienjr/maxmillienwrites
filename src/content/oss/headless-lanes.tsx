@@ -263,6 +263,37 @@ export const headlessLanes: OssContent = {
       ),
     },
     {
+      heading: 'What I’d do differently',
+      body: (
+        <>
+          <p>
+            <strong>Start with the domain model.</strong> I&rsquo;d define it up front and build
+            the documentation as I set it up.
+          </p>
+          <p className="mt-3">
+            <strong>The guardrail that cost the most before it existed:</strong> I&rsquo;ve been
+            lucky so far. None have hurt me enough for it to be memorable.
+          </p>
+          <p className="mt-3">
+            <strong>Still by hand:</strong> organizing good context packs for larger epics.
+          </p>
+          <p className="mt-3">
+            <strong>Trusting the model too late.</strong> For the first version of PureTome I
+            developed against Gemma 2 locally and planned to use a better model for prod, because
+            I was hoping for an open-source setup. That was before I realized the cloud companies
+            make it hard to host your own MLOps. For months I thought I needed to make the AI
+            smarter, which led to the old GraphRAG setup. When I switched to Gemini, I realized
+            the cost was negligible to develop with, and a lot of the limitations were simply
+            removed by using a better overall model that mirrored prod behavior.
+          </p>
+          <p className="mt-3">
+            <strong>Before the first unattended run:</strong> have some sort of log or data, so you
+            can at least confirm what the agent did and know how to improve it.
+          </p>
+        </>
+      ),
+    },
+    {
       heading: 'Steal this',
       body: (
         <>
