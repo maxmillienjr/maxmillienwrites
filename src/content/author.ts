@@ -85,7 +85,7 @@ export const authorContent: {
       { label: 'Twitter / X', href: 'https://x.com/MaxMiLL' },
       { label: 'Instagram', href: 'https://www.instagram.com/maxymerci/' },
       { label: 'TikTok', href: 'https://www.tiktok.com/@maxmillienjr' },
-      { label: 'YouTube', href: 'https://www.youtube.com/@MaxMillien-g2s' },
+      { label: 'YouTube', href: 'https://www.youtube.com/@maxmillienjr' },
       { label: 'Facebook', href: 'https://www.facebook.com/maxmill' },
       { label: 'Reddit', href: 'https://www.reddit.com/user/maxmill/' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/maxmill/' },
